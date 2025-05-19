@@ -7,7 +7,9 @@
     --dark-color: #2c3e50;
     --far-color: #27ae60;
     --aud-color: #e74c3c;
-    --bec-color: #f39c12;
+    --bar-color: #3498db;
+    --isc-color: #9b59b6;
+    --tcp-color: #e67e22;
     --reg-color: #8e44ad;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -261,8 +263,16 @@ header nav ul li a.active {
     background-color: var(--aud-color);
 }
 
-.section-header.bec {
-    background-color: var(--bec-color);
+.section-header.bar {
+    background-color: var(--bar-color);
+}
+
+.section-header.isc {
+    background-color: var(--isc-color);
+}
+
+.section-header.tcp {
+    background-color: var(--tcp-color);
 }
 
 .section-header.reg {
