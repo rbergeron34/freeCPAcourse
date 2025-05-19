@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Free CPA Course</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-graduation-cap"></i> Free CPA Course</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#sections">Course Sections</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="profile.html" class="active">My Progress</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-avatar" id="profile-avatar"></div>
+                    <h2 class="profile-name" id="profile-name">Loading...</h2>
+                    <p class="profile-email" id="profile-email"></p>
+                    
+                    <div class="profile-menu">
+                        <div class="profile-menu-item active" data-tab="dashboard">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </div>
+                        <div class="profile-menu-item" data-tab="courses">
+                            <i class="fas fa-book"></i> My Courses
+                        </div>
+                        <div class="profile-menu-item" data-tab="progress">
+                            <i class="fas fa-chart-line"></i> My Progress
+                        </div>
+                        <div class="profile-menu-item" data-tab="settings">
+                            <i class="fas fa-cog"></i> Account Settings
+                        </div>
+                        <div class="profile-menu-item" id="logout-button">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-content">
+                    <!-- Dashboard Tab -->
+                    <div class="profile-tab active" id="dashboard-tab">
+                        <h3 class="profile-section-title">Dashboard</h3>
+                        
+                        <div class="enrolled-courses-section">
+                            <h4>My Enrolled Courses</h4>
+                            <div id="enrolled-courses" class="enrolled-courses">
+                                <!-- Enrolled courses will be loaded dynamically -->
+                                <div class="loading-courses">Loading your enrolled courses...</div>
+                            </div>
+                            <div class="browse-courses">
+                                <a href="index.html#sections" class="btn">Browse All Courses</a>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-overview">
+                            <div class="progress-card">
+                                <div class="progress-card-title">Overall Progress</div>
+                                <div class="progress-card-value" id="overall-progress">0%</div>
+                                <div class="progress-card-subtitle">Across all sections</div>
+                            </div>
+                            
+                            <div class="progress-card">
+                                <div class="progress-card-title">Videos Watched</div>
+                                <div class="progress-card-value" id="videos-watched">0</div>
+                                <div class="progress-card-subtitle">Out of <span id="total-videos">0</span> videos</div>
+                            </div>
+                            
+                            <div class="progress-card">
+                                <div class="progress-card-title">Study Streak</div>
+                                <div class="progress-card-value" id="study-streak">0</div>
+                                <div class="progress-card-subtitle">Days in a row</div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-by-section">
+                            <h4>Progress by Section</h4>
+                            
+                            <div class="section-progress">
+                                <div class="section-progress-header">
+                                    <div class="section-progress-title">FAR - Financial Accounting and Reporting</div>
+                                    <div class="section-progress-value" id="far-progress">0%</div>
+                                </div>
+                                <div class="section-progress-bar">
+                                    <div class="section-progress-fill far" id="far-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-progress">
+                                <div class="section-progress-header">
+                                    <div class="section-progress-title">AUD - Auditing and Attestation</div>
+                                    <div class="section-progress-value" id="aud-progress">0%</div>
+                                </div>
+                                <div class="section-progress-bar">
+                                    <div class="section-progress-fill aud" id="aud-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-progress">
+                                <div class="section-progress-header">
+                                    <div class="section-progress-title">REG - Regulation</div>
+                                    <div class="section-progress-value" id="reg-progress">0%</div>
+                                </div>
+                                <div class="section-progress-bar">
+                                    <div class="section-progress-fill reg" id="reg-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-progress">
+                                <div class="section-progress-header">
+                                    <div class="section-progress-title">BAR - Business Analysis and Reporting</div>
+                                    <div class="section-progress-value" id="bar-progress">0%</div>
+                                </div>
+                                <div class="section-progress-bar">
+                                    <div class="section-progress-fill bar" id="bar-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-progress">
+                                <div class="section-progress-header">
+                                    <div class="section-progress-title">ISC - Information Systems and Controls</div>
+                                    <div class="section-progress-value" id="isc-progress">0%</div>
+                                </div>
+                                <div class="section-progress-bar">
+                                    <div class="section-progress-fill isc" id="isc-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-progress">
+                                <div class="section-progress-header">
+                                    <div class="section-progress-title">TCP - Tax Compliance and Planning</div>
+                                    <div class="section-progress-value" id="tcp-progress">0%</div>
+                                </div>
+                                <div class="section-progress-bar">
+                                    <div class="section-progress-fill tcp" id="tcp-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-activity">
+                            <h4>Recent Activity</h4>
+                            <div id="activity-list">
+                                <!-- Activity items will be added dynamically -->
+                                <div class="no-activity">No recent activity to display.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Tab -->
+                    <div class="profile-tab" id="progress-tab">
+                        <h3 class="profile-section-title">My Progress</h3>
+                        
+                        <div class="section-tabs">
+                            <div class="section-tab active" data-section="far">FAR</div>
+                            <div class="section-tab" data-section="aud">AUD</div>
+                            <div class="section-tab" data-section="reg">REG</div>
+                            <div class="section-tab" data-section="bar">BAR</div>
+                            <div class="section-tab" data-section="isc">ISC</div>
+                            <div class="section-tab" data-section="tcp">TCP</div>
+                        </div>
+                        
+                        <div class="section-content active" id="far-content">
+                            <h4>FAR - Financial Accounting and Reporting</h4>
+                            <div class="progress-detail">
+                                <div class="progress-header">
+                                    <div class="progress-title">Overall Progress</div>
+                                    <div class="progress-value" id="far-detail-progress">0%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill far" id="far-detail-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="topic-list" id="far-topics">
+                                <!-- Topics will be loaded dynamically -->
+                                <div class="loading-topics">Loading topics...</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Other section content divs (AUD, REG, etc.) would go here -->
+                        <div class="section-content" id="aud-content">
+                            <h4>AUD - Auditing and Attestation</h4>
+                            <div class="coming-soon-message">
+                                <i class="fas fa-clock"></i>
+                                <h3>Coming Soon</h3>
+                                <p>This section is currently under development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="section-content" id="reg-content">
+                            <h4>REG - Regulation</h4>
+                            <div class="coming-soon-message">
+                                <i class="fas fa-clock"></i>
+                                <h3>Coming Soon</h3>
+                                <p>This section is currently under development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="section-content" id="bar-content">
+                            <h4>BAR - Business Analysis and Reporting</h4>
+                            <div class="coming-soon-message">
+                                <i class="fas fa-clock"></i>
+                                <h3>Coming Soon</h3>
+                                <p>This section is currently under development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="section-content" id="isc-content">
+                            <h4>ISC - Information Systems and Controls</h4>
+                            <div class="coming-soon-message">
+                                <i class="fas fa-clock"></i>
+                                <h3>Coming Soon</h3>
+                                <p>This section is currently under development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="section-content" id="tcp-content">
+                            <h4>TCP - Tax Compliance and Planning</h4>
+                            <div class="coming-soon-message">
+                                <i class="fas fa-clock"></i>
+                                <h3>Coming Soon</h3>
+                                <p>This section is currently under development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Courses Tab -->
+                    <div class="profile-tab" id="courses-tab">
+                        <h3 class="profile-section-title">My Courses</h3>
+                        
+                        <div class="course-overview-section">
+                            <h4>CPA Exam Sections</h4>
+                            <div class="course-overview-grid">
+                                <!-- Core Exam Sections -->
+                                <div class="course-overview-card" data-course="far">
+                                    <div class="course-overview-header" style="background-color: var(--far-color)">
+                                        <div class="course-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="course-title">
+                                            <h3>FAR</h3>
+                                            <p>Financial Accounting and Reporting</p>
+                                        </div>
+                                        <div class="enrollment-status not-enrolled">
+                                            <span>Not Enrolled</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-overview-content">
+                                        <div class="course-progress-container">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 0%; background-color: var(--far-color)"></div>
+                                            </div>
+                                            <span class="progress-percentage">0%</span>
+                                        </div>
+                                        <div class="course-overview-actions">
+                                            <a href="far/index.html" class="btn-secondary">View Course</a>
+                                            <button class="btn enroll-btn" data-course="far">Enroll</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-overview-card" data-course="aud">
+                                    <div class="course-overview-header" style="background-color: var(--aud-color)">
+                                        <div class="course-icon">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <div class="course-title">
+                                            <h3>AUD</h3>
+                                            <p>Auditing and Attestation</p>
+                                        </div>
+                                        <div class="enrollment-status not-enrolled">
+                                            <span>Not Enrolled</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-overview-content">
+                                        <div class="course-progress-container">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 0%; background-color: var(--aud-color)"></div>
+                                            </div>
+                                            <span class="progress-percentage">0%</span>
+                                        </div>
+                                        <div class="course-overview-actions">
+                                            <a href="aud/index.html" class="btn-secondary">View Course</a>
+                                            <button class="btn enroll-btn" data-course="aud">Enroll</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-overview-card" data-course="reg">
+                                    <div class="course-overview-header" style="background-color: var(--reg-color)">
+                                        <div class="course-icon">
+                                            <i class="fas fa-gavel"></i>
+                                        </div>
+                                        <div class="course-title">
+                                            <h3>REG</h3>
+                                            <p>Regulation</p>
+                                        </div>
+                                        <div class="enrollment-status not-enrolled">
+                                            <span>Not Enrolled</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-overview-content">
+                                        <div class="course-progress-container">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 0%; background-color: var(--reg-color)"></div>
+                                            </div>
+                                            <span class="progress-percentage">0%</span>
+                                        </div>
+                                        <div class="course-overview-actions">
+                                            <a href="reg/index.html" class="btn-secondary">View Course</a>
+                                            <button class="btn enroll-btn" data-course="reg">Enroll</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4>Discipline Exam Sections</h4>
+                            <div class="course-overview-grid">
+                                <!-- Discipline Exam Sections -->
+                                <div class="course-overview-card" data-course="bar">
+                                    <div class="course-overview-header" style="background-color: var(--bar-color)">
+                                        <div class="course-icon">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </div>
+                                        <div class="course-title">
+                                            <h3>BAR</h3>
+                                            <p>Business Analysis and Reporting</p>
+                                        </div>
+                                        <div class="enrollment-status not-enrolled">
+                                            <span>Not Enrolled</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-overview-content">
+                                        <div class="course-progress-container">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 0%; background-color: var(--bar-color)"></div>
+                                            </div>
+                                            <span class="progress-percentage">0%</span>
+                                        </div>
+                                        <div class="course-overview-actions">
+                                            <a href="bar/index.html" class="btn-secondary">View Course</a>
+                                            <button class="btn enroll-btn" data-course="bar">Enroll</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-overview-card" data-course="isc">
+                                    <div class="course-overview-header" style="background-color: var(--isc-color)">
+                                        <div class="course-icon">
+                                            <i class="fas fa-laptop-code"></i>
+                                        </div>
+                                        <div class="course-title">
+                                            <h3>ISC</h3>
+                                            <p>Information Systems and Controls</p>
+                                        </div>
+                                        <div class="enrollment-status not-enrolled">
+                                            <span>Not Enrolled</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-overview-content">
+                                        <div class="course-progress-container">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 0%; background-color: var(--isc-color)"></div>
+                                            </div>
+                                            <span class="progress-percentage">0%</span>
+                                        </div>
+                                        <div class="course-overview-actions">
+                                            <a href="isc/index.html" class="btn-secondary">View Course</a>
+                                            <button class="btn enroll-btn" data-course="isc">Enroll</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="course-overview-card" data-course="tcp">
+                                    <div class="course-overview-header" style="background-color: var(--tcp-color)">
+                                        <div class="course-icon">
+                                            <i class="fas fa-file-invoice-dollar"></i>
+                                        </div>
+                                        <div class="course-title">
+                                            <h3>TCP</h3>
+                                            <p>Tax Compliance and Planning</p>
+                                        </div>
+                                        <div class="enrollment-status not-enrolled">
+                                            <span>Not Enrolled</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-overview-content">
+                                        <div class="course-progress-container">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 0%; background-color: var(--tcp-color)"></div>
+                                            </div>
+                                            <span class="progress-percentage">0%</span>
+                                        </div>
+                                        <div class="course-overview-actions">
+                                            <a href="tcp/index.html" class="btn-secondary">View Course</a>
+                                            <button class="btn enroll-btn" data-course="tcp">Enroll</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Settings Tab -->
+                    <div class="profile-tab" id="settings-tab">
+                        <h3 class="profile-section-title">Account Settings</h3>
+                        
+                        <form id="settings-form" class="settings-form">
+                            <h4>Personal Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="settings-name">Full Name</label>
+                                    <input type="text" id="settings-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-email">Email Address</label>
+                                    <input type="email" id="settings-email" required>
+                                </div>
+                            </div>
+                            
+                            <h4>Change Password</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="settings-current-password">Current Password</label>
+                                    <input type="password" id="settings-current-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-new-password">New Password</label>
+                                    <input type="password" id="settings-new-password">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="settings-confirm-password">Confirm New Password</label>
+                                    <input type="password" id="settings-confirm-password">
+                                </div>
+                                <div class="form-group">
+                                    <!-- Empty for alignment -->
+                                </div>
+                            </div>
+                            
+                            <h4>Notification Preferences</h4>
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <label for="email-notifications">Receive email notifications about new content and updates</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="progress-reminders" checked>
+                                    <label for="progress-reminders">Receive weekly progress reminders</label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn">Save Changes</button>
+                            <div id="settings-message" class="auth-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Free CPA Course</h2>
+                    <p>Making CPA exam preparation accessible to everyone</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#sections">Course Sections</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Free CPA Course. All videos belong to their respective creators.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+</html>

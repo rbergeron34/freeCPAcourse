@@ -17,6 +17,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#sections">Course Sections</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li class="auth-link"><a href="login.html">Login / Register</a></li>
+                    <li class="profile-link" style="display: none;"><a href="profile.html">My Progress</a></li>
                 </ul>
             </nav>
         </div>
@@ -63,14 +65,19 @@
 
     <section id="sections" class="course-sections">
         <div class="container">
-            <h2>CPA Exam Sections</h2>
-            <div class="sections-grid">
+            <h2>Core CPA Exam Sections</h2>
+            <div class="sections-grid core-sections">
                 <div class="section-card">
                     <div class="section-header far">
-                        <h3>FAR</h3>
+                        <div class="section-title">FAR</div>
                         <p>Financial Accounting and Reporting</p>
                     </div>
                     <div class="section-content">
+                        <p>Master the concepts of financial accounting, statements, and reporting standards.</p>
+                        <div class="section-actions">
+                            <a href="far/index.html" class="btn">Start Learning</a>
+                            <button class="btn-secondary enroll-btn" data-course="far" style="display: none;">Enroll</button>
+                        </div>
                         <ul>
                             <li><a href="far/conceptual-framework.html">Conceptual Framework</a></li>
                             <li><a href="far/financial-statements.html">Financial Statements</a></li>
@@ -84,10 +91,16 @@
                 
                 <div class="section-card">
                     <div class="section-header aud">
-                        <h3>AUD</h3>
+                        <div class="section-title">AUD</div>
                         <p>Auditing and Attestation</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
                     </div>
                     <div class="section-content">
+                        <p>Learn about audit procedures, internal controls, and professional standards.</p>
+                        <div class="section-actions">
+                            <a href="aud/index.html" class="btn">Start Learning</a>
+                            <button class="btn-secondary enroll-btn" data-course="aud" style="display: none;">Enroll</button>
+                        </div>
                         <ul>
                             <li><a href="aud/professional-responsibilities.html">Professional Responsibilities</a></li>
                             <li><a href="aud/internal-controls.html">Internal Controls</a></li>
@@ -100,11 +113,43 @@
                 </div>
                 
                 <div class="section-card">
-                    <div class="section-header bar">
-                        <h3>BAR</h3>
-                        <p>Business Analysis and Reporting</p>
+                    <div class="section-header reg">
+                        <div class="section-title">REG</div>
+                        <p>Regulation</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
                     </div>
                     <div class="section-content">
+                        <p>Understand business law, federal taxation, and professional ethics.</p>
+                        <div class="section-actions">
+                            <a href="reg/index.html" class="btn">Start Learning</a>
+                            <button class="btn-secondary enroll-btn" data-course="reg" style="display: none;">Enroll</button>
+                        </div>
+                        <ul>
+                            <li><a href="reg/ethics-responsibilities.html">Ethics & Responsibilities</a></li>
+                            <li><a href="reg/business-law.html">Business Law</a></li>
+                            <li><a href="reg/federal-taxation.html">Federal Taxation</a></li>
+                            <li><a href="reg/property-transactions.html">Property Transactions</a></li>
+                            <li><a href="reg/tax-procedures.html">Tax Procedures</a></li>
+                        </ul>
+                        <a href="reg/index.html" class="btn-secondary">View All REG Topics</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="discipline-header">Discipline Exams</h2>
+            <div class="sections-grid discipline-sections">
+                <div class="section-card">
+                    <div class="section-header bar">
+                        <div class="section-title">BAR</div>
+                        <p>Business Analysis and Reporting</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
+                    </div>
+                    <div class="section-content">
+                        <p>Learn financial statement analysis, forecasting, and business reporting.</p>
+                        <div class="section-actions">
+                            <a href="bar/index.html" class="btn">Start Learning</a>
+                            <button class="btn-secondary enroll-btn" data-course="bar" style="display: none;">Enroll</button>
+                        </div>
                         <ul>
                             <li><a href="bar/financial-statements.html">Financial Statements</a></li>
                             <li><a href="bar/budgets-forecasts.html">Budgets & Forecasts</a></li>
@@ -118,10 +163,16 @@
                 
                 <div class="section-card">
                     <div class="section-header isc">
-                        <h3>ISC</h3>
+                        <div class="section-title">ISC</div>
                         <p>Information Systems and Controls</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
                     </div>
                     <div class="section-content">
+                        <p>Master IT controls, security, data management, and system audits.</p>
+                        <div class="section-actions">
+                            <a href="isc/index.html" class="btn">Start Learning</a>
+                            <button class="btn-secondary enroll-btn" data-course="isc" style="display: none;">Enroll</button>
+                        </div>
                         <ul>
                             <li><a href="isc/information-systems.html">Information Systems</a></li>
                             <li><a href="isc/security-privacy.html">Security & Privacy</a></li>
@@ -135,10 +186,16 @@
                 
                 <div class="section-card">
                     <div class="section-header tcp">
-                        <h3>TCP</h3>
+                        <div class="section-title">TCP</div>
                         <p>Tax Compliance and Planning</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
                     </div>
                     <div class="section-content">
+                        <p>Learn tax compliance, planning strategies, and financial advisory.</p>
+                        <div class="section-actions">
+                            <a href="tcp/index.html" class="btn">Start Learning</a>
+                            <button class="btn-secondary enroll-btn" data-course="tcp" style="display: none;">Enroll</button>
+                        </div>
                         <ul>
                             <li><a href="tcp/federal-tax-compliance.html">Federal Tax Compliance</a></li>
                             <li><a href="tcp/tax-planning.html">Tax Planning</a></li>
@@ -149,23 +206,6 @@
                         <a href="tcp/index.html" class="btn-secondary">View All TCP Topics</a>
                     </div>
                 </div>
-                
-                <div class="section-card">
-                    <div class="section-header reg">
-                        <h3>REG</h3>
-                        <p>Regulation</p>
-                    </div>
-                    <div class="section-content">
-                        <ul>
-                            <li><a href="reg/ethics-responsibilities.html">Ethics & Responsibilities</a></li>
-                            <li><a href="reg/business-law.html">Business Law</a></li>
-                            <li><a href="reg/federal-taxation.html">Federal Taxation</a></li>
-                            <li><a href="reg/property-transactions.html">Property Transactions</a></li>
-                            <li><a href="reg/tax-procedures.html">Tax Procedures</a></li>
-                        </ul>
-                        <a href="reg/index.html" class="btn-secondary">View All REG Topics</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -173,8 +213,29 @@
     <section id="progress" class="progress">
         <div class="container">
             <h2>Track Your Progress</h2>
-            <p>Sign up for a free account to track your progress through the course.</p>
-            <a href="#" class="btn">Create Free Account</a>
+            <p class="progress-message">Sign up for a free account to track your progress through the course.</p>
+            <div class="progress-actions">
+                <a href="login.html" class="btn auth-link">Create Free Account</a>
+                <a href="profile.html" class="btn profile-link" style="display: none;">View My Progress</a>
+            </div>
+            
+            <div class="progress-features">
+                <div class="progress-feature">
+                    <i class="fas fa-sync"></i>
+                    <h3>Sync Across Devices</h3>
+                    <p>Continue your studies from any device with your account</p>
+                </div>
+                <div class="progress-feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Track Completion</h3>
+                    <p>See your progress for each exam section</p>
+                </div>
+                <div class="progress-feature">
+                    <i class="fas fa-history"></i>
+                    <h3>Study History</h3>
+                    <p>Review your learning activity and study patterns</p>
+                </div>
+            </div>
         </div>
     </section>
 
